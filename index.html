@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leandro A. Banin — Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a class="topbar-logo" href="#">Leandro A. Banin</a>
+    <div class="topbar-right">
+      <div class="clock-badge">
+        <span class="clock-dot"></span>
+        Porto Ferreira, São Paulo &nbsp;·&nbsp; <span id="clock">--:--:--</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <span class="available-tag">
+        <span class="available-dot"></span>
+        Disponível para Trabalho
+      </span>
+      <h1 class="hero-name">Leandro A.<br>Banin</h1>
+      <p class="hero-title">Desenvolvedor de Sistemas Jr.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-dark" href="#" onclick="downloadCV(event); return false;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download do CV
+        </a>
+        <a class="btn btn-outline" href="mailto:[EMAIL_ADDRESS]">Contato</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="./images/profilex.JPG" alt="Leandro Banin" />
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <p class="section-label">Sobre Mim</p>
+    <div class="section-text">
+      <p>Desenvolvedor de Sistemas Jr com experiência prática no desenvolvimento de aplicações utilizando Java, Python, Node.js, React e tecnologias web, atualmente residindo no interior de São Paulo, Brasil. Tenho projetos próprios desenvolvidos desde o MVP até a implementação, com foco em resolver problemas reais e fortalecer meu conhecimento em lógica, APIs e banco de dados.</p>
+      <p>Gosto de criar soluções eficientes, explorar novas tecnologias e evoluir de forma gradativa minhas habilidades com o mercado tecnológico. Com uma postura proativa e foco em resolução de problemas, busco uma oportunidade para demonstrar meu potencial, contribuir com projetos relevantes e crescer como desenvolvedor de sistemas.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <p class="section-label">Projetos</p>
+    <div class="projects-grid">
+
+      <a class="project-card" href="https://github.com/leandrobanin/bot-hdpr" target="_blank">
+        <div class="project-img">
+          <img src="./images/logohdpr1.jpg" alt="Bot" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">Bot de Discord</div>
+            <div class="project-cat">Desenvolvimento</div>
+          </div>
+          <span class="project-arrow">↗</span>
+          
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/leandrobanin/Projeto-Interdisciplinar" target="_blank">
+        <div class="project-img">
+          <img src="./images/helios.jpg" alt="Hélios" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">Hélios</div>
+            <div class="project-cat">Sistema de Controle de Energia Solar</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
+        <div class="project-img">
+          <img src="./images/block.jpg" alt="Minecraft" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">Plugins (Add-ons)</div>
+            <div class="project-cat">Add-ons de Sistemas para Minecraft</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
+        <div class="project-img">
+          <img src="./images/site.jpg" alt="Site" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">Site Portfólio</div>
+            <div class="project-cat">Desenvolvimento</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <p class="section-label">Experiências</p>
+    <div class="entries">
+
+      <div class="entry">
+        <div class="entry-icon"><span class="entry-icon-letter">Fr</span></div>
+        <div class="entry-body">
+          <span class="entry-org">Freelancer</span>
+          <h3 class="entry-role">Desenvolvedor de Sistemas</h3>
+          <p class="entry-desc">Desenvolvimento de sistemas por demanda, utilizando tecnologias como: Java, Python e Javascript. Integração com APIs e BDs. Uso de Frameworks como React, Node.js e SpringBoot. </p>
+          <div class="entry-meta">
+            <span class="entry-tag">📅 Março 2020 – Atual</span>
+            <span class="entry-tag">📍 Porto Ferreira, SP (Home-Office)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-icon"><span class="entry-icon-letter">Cv</span></div>
+        <div class="entry-body">
+          <span class="entry-org">Casa Verona Padaria Artesanal e Café Bar</span>
+          <h3 class="entry-role">Barista &amp; Especialização em Cafés Especiais</h3>
+          <p class="entry-desc">Preparo de bebidas à base de café com foco em qualidade e padronização. Atendimento ao cliente, organização de estoque/insumos e eficiência em ambientes de alta demanda. </p>
+          <div class="entry-meta">
+            <span class="entry-tag">📅 Julho 2024 – Março 2026</span>
+            <span class="entry-tag">📍 Porto Ferreira, SP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-icon"><span class="entry-icon-letter">Mg</span></div>
+        <div class="entry-body">
+          <span class="entry-org">Mar Girius</span>
+          <h3 class="entry-role">Auxiliar de Produção</h3>
+          <p class="entry-desc">Montagem e controle de qualidade de componentes para chaves e motores. Organização de processos produtivos, manuseio de peças e atenção aos padrões de qualidade em ambiente industrial. </p>
+          <div class="entry-meta">
+            <span class="entry-tag">📅 Junho 2023 – Outubro 2023</span>
+            <span class="entry-tag">📍 Porto Ferreira, SP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <p class="section-label">Educação</p>
+    <div class="entries">
+
+            <div class="entry">
+        <div class="entry-icon"><span class="entry-icon-letter">U</span></div>
+        <div class="entry-body">
+          <span class="entry-org">UNINTER (Ensino à Distância - EaD)</span>
+          <h3 class="entry-role">Bacharelado em Sistemas de Informação - T.I</h3>
+          <p class="entry-desc">Formação voltada para desenvolvimento de software, lógica de programação e fundamentos de banco de dados. Aprendizado contínuo e aplicação prática.</p>
+          <div class="entry-meta">
+            <span class="entry-tag">📅 Outubro 2024 – Atual</span>
+            <span class="entry-tag">📍 Online - EaD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-icon"><span class="entry-icon-letter">F</span></div>
+        <div class="entry-body">
+          <span class="entry-org">Fundação Hermínio Ometto (FHO - Uniararas)</span>
+          <h3 class="entry-role">Graduação em Sistemas de Informação - T.I (cancelado)</h3>
+          <p class="entry-desc">Formação voltada para desenvolvimento de software, lógica de programação e fundamentos de banco de dados. Aprendizado contínuo e aplicação prática.</p>
+          <div class="entry-meta">
+            <span class="entry-tag">📅 Fevereiro 2023 – Agosto 2024</span>
+            <span class="entry-tag">📍 Araras, SP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section">
+    <p class="section-label">Cursos</p>
+    <div class="certs">
+
+      <a class="cert" href="https://www.udemy.com/" target="_blank">
+        <div>
+          <div class="cert-name">Django Web Framework com Python, HTML e CSS</div>
+          <div class="cert-date">Outubro 2025</div>
+        </div>
+        <span class="cert-arrow">↗</span>
+      </a>
+
+      <a class="cert" href="https://www.udemy.com/" target="_blank">
+        <div>
+          <div class="cert-name">Inglês Avançado - Básico à Fluência</div>
+          <div class="cert-date">Fevereiro 2025</div>
+        </div>
+        <span class="cert-arrow">↗</span>
+      </a>
+
+      <a class="cert" href="https://www.udemy.com/" target="_blank">
+        <div>
+          <div class="cert-name">Indústria 4.0</div>
+          <div class="cert-date">Março 2026</div>
+        </div>
+        <span class="cert-arrow">↗</span>
+      </a>
+
+      <a class="cert" href="https://www.udemy.com/" target="_blank">
+        <div>
+          <div class="cert-name">Tecnologias e educação: espaço para além da sala de aula</div>
+          <div class="cert-date">Março 2026</div>
+        </div>
+        <span class="cert-arrow">↗</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+   <section class="section">
+    <p class="section-label">Idiomas</p>
+    <div class="entries">
+
+            <div class="entry">
+        <div class="entry-icon"><span class="entry-icon-letter">I</span></div>
+        <div class="entry-body">
+          <span class="entry-org">Nível B1 - Conversação e Interpretação Textual</span>
+          <h3 class="entry-role">Inglês</h3>
+          <p class="entry-desc">Inglês intermediário</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="section">
+    <p class="section-label">Ferramentas</p>
+    <div class="tools-grid">
+
+      <a class="tool-card" href="https://developer.microsoft.com/pt-br/javascript/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=PXTY4q2Sq2lG&format=png&color=000000" alt="Javascript"></div>
+        <div>
+          <div class="tool-name">Javascript</div>
+          <div class="tool-sub">Linguagem de Programação</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://www.java.com/pt-BR/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=Pd2x9GWu9ovX&format=png&color=000000" alt="Java"></div>
+        <div>
+          <div class="tool-name">Java</div>
+          <div class="tool-sub">Linguagem de Programação</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://www.python.org/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=l75OEUJkPAk4&format=png&color=000000" alt="Python"></div>
+        <div>
+          <div class="tool-name">Python</div>
+          <div class="tool-sub">Linguagem de Programação</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://www.docker.com/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=cdYUlRaag9G9&format=png&color=000000" alt="Docker"></div>
+        <div>
+          <div class="tool-name">Docker</div>
+          <div class="tool-sub">Containerização</div>
+        </div>
+      </a>
+
+            <a class="tool-card" href="https://nodejs.org/en" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=hsPbhkOH4FMe&format=png&color=000000" alt="Node.js"></div>
+        <div>
+          <div class="tool-name">Node.js</div>
+          <div class="tool-sub">Ambiente de Execução</div>
+        </div>
+      </a>
+
+            <a class="tool-card" href="https://www.mysql.com/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=9nLaR5KFGjN0&format=png&color=000000" alt="My SQL"></div>
+        <div>
+          <div class="tool-name">MySQL</div>
+          <div class="tool-sub">Banco de Dados</div>
+        </div>
+      </a>
+
+            <a class="tool-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=v8RpPQUwv0N8&format=png&color=000000" alt="HTML"></div>
+        <div>
+          <div class="tool-name">HTML</div>
+          <div class="tool-sub">Linguagem de Marcação</div>
+        </div>
+      </a>
+
+            <a class="tool-card" href="https://www.docker.com/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=7gdY5qNXaKC0&format=png&color=000000" alt="CSS"></div>
+        <div>
+          <div class="tool-name">CSS</div>
+          <div class="tool-sub">Linguagem de Estilo</div>
+        </div>
+      </a>
+
+            <a class="tool-card" href="https://github.com/leandrobanin" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=AZOZNnY73haj&format=png&color=000000" alt="Github"></div>
+        <div>
+          <div class="tool-name">Github</div>
+          <div class="tool-sub">Controle de Versão</div>
+        </div>
+      </a>
+            
+            <a class="tool-card" href="https://www.outsystems.com/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=MdMvE4eOwipK&format=png&color=000000" alt="Outsystems"></div>
+        <div>
+          <div class="tool-name">Outsystems</div>
+          <div class="tool-sub">Low-Code</div>
+        </div>
+      </a>
+
+            <a class="tool-card" href="https://www.outsystems.com/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=20906&format=png&color=000000" alt="Git"></div>
+        <div>
+          <div class="tool-name">Git</div>
+          <div class="tool-sub">Controle de Versão</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section">
+    <p class="section-label">Contato</p>
+    <div class="contact-grid">
+
+      <a class="contact-card" href="mailto:zenaugusto98@gmail.com">
+        <div>
+          <div class="contact-label">E-mail</div>
+          <div class="contact-value">zenaugusto98@gmail.com</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+      <a class="contact-card" href="tel:+5519998668849">
+        <div>
+          <div class="contact-label">Telefone</div>
+          <div class="contact-value">+55 (19) 99866-8849</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+      <a class="contact-card" href="https://www.linkedin.com/in/leandrobanin/" target="_blank">
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">/in/leandrobanin/</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+      <a class="contact-card" href="https://www.instagram.com/leauguxto/" target="_blank">
+        <div>
+          <div class="contact-label">Instagram</div>
+          <div class="contact-value">@leauguxto</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+      <a class="contact-card" href="https://github.com/leandrobanin" target="_blank">
+        <div>
+          <div class="contact-label">Github</div>
+          <div class="contact-value">/leandrobanin</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+    </div>
+  </section>
+
+  <p class="footer-copy">2026 © Unti</p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
