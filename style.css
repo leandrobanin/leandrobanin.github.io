@@ -452,6 +452,130 @@ body {
   .hero-name { font-size: 38px; }
 }
 
+/* ── MODAL ── */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 18, 15, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 750px;
+  height: 80vh;
+  max-height: 900px;
+  overflow: hidden; /* Oculta a barra de rolagem */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  position: relative;
+  opacity: 0;
+  /* Animação: Slide/Reveal do meio para fora */
+  transform: scale(0.9);
+  clip-path: inset(50% 50% 50% 50% round 20px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  box-shadow: 0 32px 72px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
+  transform: scale(1);
+  clip-path: inset(0% 0% 0% 0% round 20px);
+}
+
+.modal-close {
+  color: var(--bg);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.modal-close:hover {
+  color: var(--ink);
+  background: var(--bg);
+  transform: scale(1.1);
+}
+
+.modal-img-container {
+  width: 100%;
+  height: 50%;
+  min-height: 250px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: #ccc;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal.show .modal-img-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.modal-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal.show .modal-body {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
 /* ── FADE-IN ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }

@@ -18,7 +18,7 @@
     <div class="topbar-right">
       <div class="clock-badge">
         <span class="clock-dot"></span>
-        Porto Ferreira, São Paulo &nbsp;·&nbsp; <span id="clock">--:--:--</span>
+        <span id="user-location">Localizando...</span> &nbsp;·&nbsp; <span id="clock">--:--</span>
       </div>
     </div>
   </header>
@@ -65,12 +65,12 @@
 
       <a class="project-card" href="https://github.com/leandrobanin/bot-hdpr" target="_blank">
         <div class="project-img">
-          <img src="./images/logohdpr1.jpg" alt="Bot" />
+          <img src="./images/logohdpr.png" alt="Bot" />
         </div>
         <div class="project-info">
           <div>
             <div class="project-name">Bot de Discord</div>
-            <div class="project-cat">Desenvolvimento</div>
+            <div class="project-cat">Bot multifuncional para Discord</div>
           </div>
           <span class="project-arrow">↗</span>
           
@@ -79,7 +79,7 @@
 
       <a class="project-card" href="https://github.com/leandrobanin/Projeto-Interdisciplinar" target="_blank">
         <div class="project-img">
-          <img src="./images/helios.jpg" alt="Hélios" />
+          <img src="./images/helios1.png" alt="Hélios" />
         </div>
         <div class="project-info">
           <div>
@@ -92,7 +92,7 @@
 
       <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
         <div class="project-img">
-          <img src="./images/block.jpg" alt="Minecraft" />
+          <img src="./images/block1.png" alt="Minecraft" />
         </div>
         <div class="project-info">
           <div>
@@ -105,12 +105,12 @@
 
       <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
         <div class="project-img">
-          <img src="./images/site.jpg" alt="Site" />
+          <img src="./images/site1.png" alt="Site" />
         </div>
         <div class="project-info">
           <div>
             <div class="project-name">Site Portfólio</div>
-            <div class="project-cat">Desenvolvimento</div>
+            <div class="project-cat">Portfólio para apresentar projetos pessoais</div>
           </div>
           <span class="project-arrow">↗</span>
         </div>
@@ -402,6 +402,31 @@
 
   <p class="footer-copy">2026 © Leandro A. Banin</p>
 
+</div>
+
+<!-- MODAL DE PROJETO -->
+<div id="project-modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <div class="modal-img-container">
+      <img id="modal-img" src="" alt="Projeto" />
+    </div>
+    <div class="modal-body">
+      <h2 id="modal-title" class="project-name" style="font-size: 24px; margin-bottom: 4px;">Título</h2>
+      <p id="modal-cat" class="project-cat" style="margin-bottom: 20px; font-size: 14px;">Categoria</p>
+      <p id="modal-desc" class="section-text" style="flex: 1; margin-bottom: 28px;">
+        Este projeto pode ser visualizado com mais detalhes diretamente na respectiva página, contemplando códigos, tecnologias e implementações.
+      </p>
+      <a id="modal-link" class="btn btn-dark" href="#" target="_blank" style="display: inline-flex; width: 100%; justify-content: center; padding: 14px 20px; margin-top: auto;">
+        Acessar Projeto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
