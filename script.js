@@ -1,15 +1,13 @@
-// Variável global para armazenar o fuso horário (timezone)
 let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Sao_Paulo';
 
 function updateClock() {
   const now = new Date();
   
-  // Converte o tempo pro fuso horário detectado do usuário
   let localTime;
   try {
     localTime = new Date(now.toLocaleString('pt-BR', { timeZone: userTimeZone }));
   } catch(e) {
-    localTime = now; // Fallback se timezone for inválido
+    localTime = now;
   }
   
   const h = String(localTime.getHours()).padStart(2, '0');
@@ -24,30 +22,69 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-// Buscar localização via API pública
-async function fetchUserLocation() {
+
+async function fallbackIPLocation() {
   const locationEl = document.getElementById('user-location');
-  if (!locationEl) return;
-  
   try {
     const response = await fetch('https://ipapi.co/json/');
     const data = await response.json();
     
     if (data && data.city) {
-      // Exibe a cidade e o país ou região, ex: "São Paulo, SP"
-      locationEl.textContent = `${data.city}, ${data.region_code || data.country_name}`;
-      
-      // Atualiza a global com o fuso horário da API, para garantir precisão
+      locationEl.textContent = `${data.city}, ${data.region_code}`;
       if (data.timezone) {
         userTimeZone = data.timezone;
-        updateClock(); // Força atualização imediata da tela
+        updateClock();
       }
     } else {
       locationEl.textContent = 'Visitante';
     }
   } catch (error) {
-    console.error('Erro ao buscar localização da API:', error);
     locationEl.textContent = 'Visitante';
+  }
+}
+
+function fetchUserLocation() {
+  const locationEl = document.getElementById('user-location');
+  if (!locationEl) return;
+  
+  if (navigator.geolocation) {
+    locationEl.textContent = 'Aguardando...';
+    
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+
+        try {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          
+
+          const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=pt`);
+          const data = await response.json();
+          
+          if (data && (data.city || data.locality)) {
+            const cidade = data.city || data.locality;
+            let estado = data.principalSubdivisionCode || data.principalSubdivision;
+            if (estado && estado.includes('-')) {
+              estado = estado.split('-').pop();
+            }
+            locationEl.textContent = `${cidade}, ${estado}`;
+          } else {
+            fallbackIPLocation();
+          }
+        } catch (error) {
+          fallbackIPLocation();
+        }
+      },
+      (error) => {
+
+        console.warn('Permissão de localização negada pelo usuário. Recorrendo ao IP.');
+        fallbackIPLocation();
+      }
+    );
+  } else {
+
+    fallbackIPLocation();
   }
 }
 
