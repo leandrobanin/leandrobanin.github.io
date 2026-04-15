@@ -3,19 +3,23 @@ let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/
 function updateClock() {
   const now = new Date();
   
-  let localTime;
+  let timeString;
   try {
-    localTime = new Date(now.toLocaleString('pt-BR', { timeZone: userTimeZone }));
+    timeString = new Intl.DateTimeFormat('pt-BR', {
+      timeZone: userTimeZone,
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    }).format(now);
   } catch(e) {
-    localTime = now;
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    timeString = `${h}:${m}`;
   }
-  
-  const h = String(localTime.getHours()).padStart(2, '0');
-  const m = String(localTime.getMinutes()).padStart(2, '0');
   
   const clockEl = document.getElementById('clock');
   if(clockEl) {
-    clockEl.textContent = `${h}:${m}`;
+    clockEl.textContent = timeString;
   }
 }
 
@@ -189,3 +193,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+

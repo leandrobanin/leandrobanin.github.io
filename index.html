@@ -30,8 +30,13 @@
         <span class="available-dot"></span>
         Disponível para Trabalho
       </span>
+      <!--<span class="unavailable-tag">
+        <span class="unavailable-dot"></span>
+        Indisponível para Trabalho
+      </span>-->
+
       <h1 class="hero-name">Leandro A.<br>Banin</h1>
-      <p class="hero-title">Desenvolvedor de Sistemas Jr.</p>
+      <p class="hero-title">Desenvolvedor de Sistemas Jr. com foco em aplicações web, automações e integração com APIs.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark" href="#" onclick="downloadCV(event); return false;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -63,6 +68,45 @@
     <p class="section-label">Projetos</p>
     <div class="projects-grid">
 
+      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
+        <div class="project-img">
+          <img src="./images/sortlyx.png" alt="Sortlyx" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">Sortlyx</div>
+            <div class="project-cat">Aplicativo Web para organização de documentos</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/leandrobanin/toquite-app-gerenciamento-de-carnes" target="_blank">
+        <div class="project-img">
+          <img src="./images/toquite.png" alt="Tôquite" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">TôQuite</div>
+            <div class="project-cat">Aplicativo Web/Mobile para controle de carnês</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
+        <div class="project-img">
+          <img src="./images/coingravity.png" alt="CoinGravity" />
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">CoinGravity</div>
+            <div class="project-cat">Website de informações sobre moedas</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
       <a class="project-card" href="https://github.com/leandrobanin/bot-hdpr" target="_blank">
         <div class="project-img">
           <img src="./images/logohdpr.png" alt="Bot" />
@@ -84,20 +128,20 @@
         <div class="project-info">
           <div>
             <div class="project-name">Hélios</div>
-            <div class="project-cat">Sistema de Controle de Energia Solar</div>
+            <div class="project-cat">Sistema de controle de energia solar</div>
           </div>
           <span class="project-arrow">↗</span>
         </div>
       </a>
 
-      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
+      <a class="project-card" href="https://github.com/leandrobanin/SystemHomes" target="_blank">
         <div class="project-img">
           <img src="./images/block1.png" alt="Minecraft" />
         </div>
         <div class="project-info">
           <div>
             <div class="project-name">Plugins (Add-ons)</div>
-            <div class="project-cat">Add-ons de Sistemas para Minecraft</div>
+            <div class="project-cat">Add-ons de sistemas para Minecraft</div>
           </div>
           <span class="project-arrow">↗</span>
         </div>
@@ -125,7 +169,7 @@
     <div class="entries">
 
       <div class="entry">
-        <div class="entry-icon"><span class="entry-icon-letter">Fr</span></div>
+        <div class="entry-icon"><span class="entry-icon-letter">F</span></div>
         <div class="entry-body">
           <span class="entry-org">Freelancer</span>
           <h3 class="entry-role">Desenvolvedor de Sistemas</h3>
@@ -138,7 +182,7 @@
       </div>
 
       <div class="entry">
-        <div class="entry-icon"><span class="entry-icon-letter">Cv</span></div>
+        <div class="entry-icon"><span class="entry-icon-letter">C</span></div>
         <div class="entry-body">
           <span class="entry-org">Casa Verona Padaria Artesanal e Café Bar</span>
           <h3 class="entry-role">Barista &amp; Especialização em Cafés Especiais</h3>
@@ -151,7 +195,7 @@
       </div>
 
       <div class="entry">
-        <div class="entry-icon"><span class="entry-icon-letter">Mg</span></div>
+        <div class="entry-icon"><span class="entry-icon-letter">M</span></div>
         <div class="entry-body">
           <span class="entry-org">Mar Girius</span>
           <h3 class="entry-role">Auxiliar de Produção</h3>
@@ -188,7 +232,7 @@
         <div class="entry-icon"><span class="entry-icon-letter">F</span></div>
         <div class="entry-body">
           <span class="entry-org">Fundação Hermínio Ometto (FHO - Uniararas)</span>
-          <h3 class="entry-role">Graduação em Sistemas de Informação - T.I (cancelado)</h3>
+          <h3 class="entry-role">Bacharelado em Sistemas de Informação - T.I (1° ao 5° semestre)</h3>
           <p class="entry-desc">Formação voltada para desenvolvimento de software, lógica de programação e fundamentos de banco de dados. Aprendizado contínuo e aplicação prática.</p>
           <div class="entry-meta">
             <span class="entry-tag">📅 Fevereiro 2023 – Agosto 2024</span>
@@ -400,7 +444,14 @@
     </div>
   </section>
 
-  <p class="footer-copy">2026 © Leandro A. Banin</p>
+  <footer class="footer">
+    <p class="footer-copy">2026 © Leandro A. Banin</p>
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
+  </footer>
 
 </div>
 
