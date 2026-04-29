@@ -10,12 +10,40 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<canvas id="space-canvas" class="space-canvas"></canvas>
 <div class="page">
 
   <!-- TOPBAR -->
   <header class="topbar">
     <a class="topbar-logo" href="#">Leandro A. Banin</a>
     <div class="topbar-right">
+      <div class="lang-wrapper">
+        <div class="tooltip-container">
+          <button id="space-toggle" class="space-toggle" aria-label="Toggle WebGL Space" title="Toggle WebGL Space">⏾</button>
+          <div id="darkmode-tooltip" class="darkmode-tooltip">
+            <button id="darkmode-tooltip-close" class="lang-tooltip-close" aria-label="Close tooltip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="lang-tooltip-content">
+              <span class="lang-tooltip-title">Prefer dark mode? You can switch the site here.</span>
+              <span class="lang-tooltip-desc">Click to switch dark mode instantly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tooltip-container">
+          <button id="lang-toggle" class="lang-toggle" aria-label="Translate to English" title="Translate to English">EN</button>
+          <div id="lang-tooltip" class="lang-tooltip">
+            <button id="lang-tooltip-close" class="lang-tooltip-close" aria-label="Close tooltip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="lang-tooltip-content">
+              <span class="lang-tooltip-title">Prefer English? You can switch the site here.</span>
+              <span class="lang-tooltip-desc">Click to switch language instantly</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="clock-badge">
         <span class="clock-dot"></span>
         <span id="user-location">Localizando...</span> &nbsp;·&nbsp; <span id="clock">--:--</span>
@@ -50,7 +78,7 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="./images/profilex.JPG" alt="Leandro Banin" />
+      <img src="./images/profile.png" alt="Leandro Banin" />
     </div>
   </section>
 

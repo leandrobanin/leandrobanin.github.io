@@ -1,0 +1,14 @@
+# Imagens do portfólio
+images/
+
+# Currículo (dados pessoais)
+CV.pdf
+
+# Editor e sistema
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.log
+*.tmp
