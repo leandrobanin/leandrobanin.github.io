@@ -92,102 +92,15 @@
   </section>
 
   <!-- PROJECTS -->
-  <section class="section">
-    <p class="section-label">Projetos</p>
-    <div class="projects-grid">
-
-      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
-        <div class="project-img">
-          <img src="./images/sortlyx.png" alt="Sortlyx" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">Sortlyx</div>
-            <div class="project-cat">Aplicativo Web para organização de documentos</div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/leandrobanin/toquite-app-gerenciamento-de-carnes" target="_blank">
-        <div class="project-img">
-          <img src="./images/toquite.png" alt="Tôquite" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">TôQuite</div>
-            <div class="project-cat">Aplicativo Web/Mobile para controle de carnês</div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
-        <div class="project-img">
-          <img src="./images/coingravity.png" alt="CoinGravity" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">CoinGravity</div>
-            <div class="project-cat">Website de informações sobre moedas</div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/leandrobanin/bot-hdpr" target="_blank">
-        <div class="project-img">
-          <img src="./images/logohdpr.png" alt="Bot" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">Bot de Discord</div>
-            <div class="project-cat">Bot multifuncional para Discord</div>
-          </div>
-          <span class="project-arrow">↗</span>
-          
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/leandrobanin/Projeto-Interdisciplinar" target="_blank">
-        <div class="project-img">
-          <img src="./images/helios1.png" alt="Hélios" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">Hélios</div>
-            <div class="project-cat">Sistema de controle de energia solar</div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/leandrobanin/SystemHomes" target="_blank">
-        <div class="project-img">
-          <img src="./images/block1.png" alt="Minecraft" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">Plugins (Add-ons)</div>
-            <div class="project-cat">Add-ons de sistemas para Minecraft</div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="project-card" href="https://github.com/leandrobanin" target="_blank">
-        <div class="project-img">
-          <img src="./images/site1.png" alt="Site" />
-        </div>
-        <div class="project-info">
-          <div>
-            <div class="project-name">Site Portfólio</div>
-            <div class="project-cat">Portfólio para apresentar projetos pessoais</div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-
+  <section class="section projects-section">
+    <p class="section-label" data-translate="Projetos">Projetos</p>
+    <div class="projects-wrapper collapsed" id="projects-wrapper">
+      <div class="projects-grid" id="github-projects-container">
+        <p style="color: var(--ink-muted); font-size: 14px; grid-column: 1 / -1; text-align: center; padding: 20px;" data-translate="Carregando projetos do GitHub...">Carregando projetos do GitHub...</p>
+      </div>
+      <div class="projects-overlay" id="projects-overlay">
+        <button class="view-more-btn" id="view-more-projects-btn" data-translate="Ver mais">Ver mais</button>
+      </div>
     </div>
   </section>
 
@@ -246,11 +159,11 @@
             <div class="entry">
         <div class="entry-icon"><span class="entry-icon-letter">U</span></div>
         <div class="entry-body">
-          <span class="entry-org">UNINTER (Ensino à Distância - EaD)</span>
-          <h3 class="entry-role">Bacharelado em Sistemas de Informação - T.I</h3>
+          <span class="entry-org">Unicesumar (Ensino à Distância - EaD)</span>
+          <h3 class="entry-role">Bacharelado em Análise e Desenvolvimento de Sistemas - Tecnologia em Informática</h3>
           <p class="entry-desc">Formação voltada para desenvolvimento de software, lógica de programação e fundamentos de banco de dados. Aprendizado contínuo e aplicação prática.</p>
           <div class="entry-meta">
-            <span class="entry-tag">📅 Outubro 2024 – Atual</span>
+            <span class="entry-tag">📅 Outubro 2025 – Atual</span>
             <span class="entry-tag">📍 Online - EaD</span>
           </div>
         </div>
@@ -260,10 +173,10 @@
         <div class="entry-icon"><span class="entry-icon-letter">F</span></div>
         <div class="entry-body">
           <span class="entry-org">Fundação Hermínio Ometto (FHO - Uniararas)</span>
-          <h3 class="entry-role">Bacharelado em Sistemas de Informação - T.I (1° ao 5° semestre)</h3>
+          <h3 class="entry-role">Bacharelado em Sistemas de Informação - Tecnologia em Informática (1° ao 3° semestre)</h3>
           <p class="entry-desc">Formação voltada para desenvolvimento de software, lógica de programação e fundamentos de banco de dados. Aprendizado contínuo e aplicação prática.</p>
           <div class="entry-meta">
-            <span class="entry-tag">📅 Fevereiro 2023 – Agosto 2024</span>
+            <span class="entry-tag">📅 Fevereiro 2024 – Agosto 2025</span>
             <span class="entry-tag">📍 Araras, SP</span>
           </div>
         </div>
@@ -333,6 +246,30 @@
     <p class="section-label">Ferramentas</p>
     <div class="tools-grid">
 
+      <a class="tool-card" href="https://www.java.com/pt-BR/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=Pd2x9GWu9ovX&format=png&color=000000" alt="Java"></div>
+        <div>
+          <div class="tool-name">Java</div>
+          <div class="tool-sub">Linguagem de Programação</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://spring.io/projects/spring-boot" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=90519&format=png&color=000000" alt="Spring Boot"></div>
+        <div>
+          <div class="tool-name">Spring Boot</div>
+          <div class="tool-sub">Framework</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://kotlinlang.org/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=18&id=bGD8ChgdMIJV&format=png&color=000000" alt="Kotlin"></div>
+        <div>
+          <div class="tool-name">Kotlin</div>
+          <div class="tool-sub">Linguagem de Programação</div>
+        </div>
+      </a>
+
       <a class="tool-card" href="https://developer.microsoft.com/pt-br/javascript/" target="_blank">
         <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=PXTY4q2Sq2lG&format=png&color=000000" alt="Javascript"></div>
         <div>
@@ -341,11 +278,11 @@
         </div>
       </a>
 
-      <a class="tool-card" href="https://www.java.com/pt-BR/" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=Pd2x9GWu9ovX&format=png&color=000000" alt="Java"></div>
+      <a class="tool-card" href="https://nodejs.org/en" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=hsPbhkOH4FMe&format=png&color=000000" alt="Node.js"></div>
         <div>
-          <div class="tool-name">Java</div>
-          <div class="tool-sub">Linguagem de Programação</div>
+          <div class="tool-name">Node.js</div>
+          <div class="tool-sub">Ambiente de Execução</div>
         </div>
       </a>
 
@@ -357,6 +294,38 @@
         </div>
       </a>
 
+      <a class="tool-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=v8RpPQUwv0N8&format=png&color=000000" alt="HTML"></div>
+        <div>
+          <div class="tool-name">HTML</div>
+          <div class="tool-sub">Linguagem de Marcação</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=7gdY5qNXaKC0&format=png&color=000000" alt="CSS"></div>
+        <div>
+          <div class="tool-name">CSS</div>
+          <div class="tool-sub">Linguagem de Estilo</div>
+        </div>
+      </a>
+
+      <a class="tool-card" href="https://github.com/leandrobanin" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=AZOZNnY73haj&format=png&color=000000" alt="Github"></div>
+        <div>
+          <div class="tool-name">Github</div>
+          <div class="tool-sub">Controle de Versão</div>
+        </div>
+      </a>
+      
+      <a class="tool-card" href="https://git-scm.com/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=6Qr2kBSBemvq&format=png&color=000000" alt="Git"></div>
+        <div>
+          <div class="tool-name">Git</div>
+          <div class="tool-sub">Controle de Versão</div>
+        </div>
+      </a>
+      
       <a class="tool-card" href="https://www.docker.com/" target="_blank">
         <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=cdYUlRaag9G9&format=png&color=000000" alt="Docker"></div>
         <div>
@@ -365,15 +334,15 @@
         </div>
       </a>
 
-            <a class="tool-card" href="https://nodejs.org/en" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=hsPbhkOH4FMe&format=png&color=000000" alt="Node.js"></div>
+      <a class="tool-card" href="https://www.linux.org/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=17842&format=png&color=000000" alt="Linux"></div>
         <div>
-          <div class="tool-name">Node.js</div>
-          <div class="tool-sub">Ambiente de Execução</div>
+          <div class="tool-name">Linux</div>
+          <div class="tool-sub">Sistema Operacional</div>
         </div>
       </a>
 
-            <a class="tool-card" href="https://www.mysql.com/" target="_blank">
+      <a class="tool-card" href="https://www.mysql.com/" target="_blank">
         <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=9nLaR5KFGjN0&format=png&color=000000" alt="My SQL"></div>
         <div>
           <div class="tool-name">MySQL</div>
@@ -381,46 +350,14 @@
         </div>
       </a>
 
-            <a class="tool-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=v8RpPQUwv0N8&format=png&color=000000" alt="HTML"></div>
+      <a class="tool-card" href="https://www.postgresql.org/" target="_blank">
+        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=38561&format=png&color=000000" alt="PostgreSQL"></div>
         <div>
-          <div class="tool-name">HTML</div>
-          <div class="tool-sub">Linguagem de Marcação</div>
+          <div class="tool-name">PostgreSQL</div>
+          <div class="tool-sub">Banco de Dados</div>
         </div>
       </a>
-
-            <a class="tool-card" href="https://www.docker.com/" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=7gdY5qNXaKC0&format=png&color=000000" alt="CSS"></div>
-        <div>
-          <div class="tool-name">CSS</div>
-          <div class="tool-sub">Linguagem de Estilo</div>
-        </div>
-      </a>
-
-            <a class="tool-card" href="https://github.com/leandrobanin" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=AZOZNnY73haj&format=png&color=000000" alt="Github"></div>
-        <div>
-          <div class="tool-name">Github</div>
-          <div class="tool-sub">Controle de Versão</div>
-        </div>
-      </a>
-            
-            <a class="tool-card" href="https://www.outsystems.com/" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=MdMvE4eOwipK&format=png&color=000000" alt="Outsystems"></div>
-        <div>
-          <div class="tool-name">Outsystems</div>
-          <div class="tool-sub">Low-Code</div>
-        </div>
-      </a>
-
-            <a class="tool-card" href="https://www.outsystems.com/" target="_blank">
-        <div class="tool-icon"><img src="https://img.icons8.com/?size=28&id=20906&format=png&color=000000" alt="Git"></div>
-        <div>
-          <div class="tool-name">Git</div>
-          <div class="tool-sub">Controle de Versão</div>
-        </div>
-      </a>
-
+      
     </div>
   </section>
 

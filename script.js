@@ -144,28 +144,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCat = document.getElementById('modal-cat');
     const modalLink = document.getElementById('modal-link');
 
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const title = card.querySelector('.project-name').innerText;
-            const cat = card.querySelector('.project-cat').innerText;
-            const imgSrc = card.querySelector('img').src;
-            const href = card.getAttribute('href');
-            
-            modalTitle.innerText = title;
-            modalCat.innerText = cat;
-            modalImg.src = imgSrc;
-            modalLink.href = href;
-            
-            modal.style.display = 'flex';
+    document.body.addEventListener('click', (e) => {
+        const card = e.target.closest('.project-card');
+        if (!card) return;
+        
+        e.preventDefault();
+        
+        const title = card.querySelector('.project-name').innerText;
+        const cat = card.querySelector('.project-cat').innerText;
+        const projectImgHtml = card.querySelector('.project-img').innerHTML;
+        const href = card.getAttribute('href');
+        
+        modalTitle.innerText = title;
+        modalCat.innerText = cat;
+        
+        const modalImgContainer = document.querySelector('.modal-img-container');
+        modalImgContainer.innerHTML = projectImgHtml;
+        
+        modalLink.href = href;
+        
+        modal.style.display = 'flex';
 
-            void modal.offsetWidth;
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        });
+        void modal.offsetWidth;
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
     });
 
     const closeModal = () => {
@@ -227,13 +229,13 @@ const translations = {
   "Montagem e controle de qualidade de componentes para chaves e motores. Organização de processos produtivos, manuseio de peças e atenção aos padrões de qualidade em ambiente industrial.": "Assembly and quality control of components for switches and motors. Organization of production processes, handling of parts, and attention to quality standards in an industrial environment.",
   "📅 Junho 2023 – Outubro 2023": "📅 June 2023 – October 2023",
   "Educação": "Education",
-  "UNINTER (Ensino à Distância - EaD)": "UNINTER (Distance Learning)",
-  "Bacharelado em Sistemas de Informação - T.I": "Bachelor of Information Systems - I.T.",
+  "Unicesumar (Ensino à Distância - EaD)": "Unicesumar (Distance Learning)",
+  "Bacharelado em Análise e Desenvolvimento de Sistemas - Tecnologia em Informática": "Bachelor of Systems Analysis and Development - Information Technology",
   "Formação voltada para desenvolvimento de software, lógica de programação e fundamentos de banco de dados. Aprendizado contínuo e aplicação prática.": "Degree focused on software development, programming logic, and database fundamentals. Continuous learning and practical application.",
-  "📅 Outubro 2024 – Atual": "📅 October 2024 – Present",
+  "📅 Outubro 2025 – Atual": "📅 October 2025 – Present",
   "📍 Online - EaD": "📍 Online - Distance Learning",
-  "Bacharelado em Sistemas de Informação - T.I (1° ao 5° semestre)": "Bachelor of Information Systems - I.T. (1st to 5th semester)",
-  "📅 Fevereiro 2023 – Agosto 2024": "📅 February 2023 – August 2024",
+  "Bacharelado em Sistemas de Informação - Tecnologia em Informática (1° ao 3° semestre)": "Bachelor of Information Systems - Information Technology (1st to 3rd semester)",
+  "📅 Fevereiro 2023 – Agosto 2024": "📅 February 2024 – August 2025",
   "Cursos": "Courses",
   "Django Web Framework com Python, HTML e CSS": "Django Web Framework with Python, HTML and CSS",
   "Outubro 2025": "October 2025",
@@ -246,6 +248,7 @@ const translations = {
   "Nível B1 - Conversação e Interpretação Textual": "Level B1 - Conversation and Textual Interpretation",
   "Inglês": "English",
   "Inglês intermediário": "Intermediate English",
+  "Ver mais": "View more",
   "Ferramentas": "Tools",
   "Linguagem de Programação": "Programming Language",
   "Containerização": "Containerization",
@@ -254,6 +257,11 @@ const translations = {
   "Linguagem de Marcação": "Markup Language",
   "Linguagem de Estilo": "Style Language",
   "Controle de Versão": "Version Control",
+  "Sistema Operacional": "Operating System",
+  "Framework": "Framework",
+  "Banco de Dados Relacional": "Relational Database",
+  "Ferramentas de Desenvolvimento": "Development Tools",
+  "Ambiente de Execução": "Runtime Environment",
   "Telefone": "Phone",
   "Este projeto pode ser visualizado com mais detalhes diretamente na respectiva página, contemplando códigos, tecnologias e implementações.": "This project can be viewed in more detail directly on its respective page, covering code, technologies, and implementations.",
   "Acessar Projeto": "Access Project",
@@ -263,6 +271,8 @@ const translations = {
   "Visitante": "Visitor",
   "Aguardando...": "Waiting...",
   "Voltar ao topo": "Back to top",
+  "Sem descrição": "No description",
+  "Projeto no GitHub": "GitHub Project"
 };
 
 const reverseTranslations = {};
@@ -471,3 +481,103 @@ function initSpaceCanvas() {
   init();
   animate();
 }
+
+async function loadGitHubProjects() {
+  const container = document.getElementById('github-projects-container');
+  if (!container) return;
+
+  const githubUsername = 'leandrobanin';
+  const url = `https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=12`;
+
+  const repositoriosIgnorados = [
+    'leandrobanin',
+    'leandrobanin.github.io'
+  ];
+
+  try {
+    const response = await fetch(url);
+    const repos = await response.json();
+    
+    container.innerHTML = '';
+
+    const activeRepos = repos
+      .filter(repo => !repo.fork && !repositoriosIgnorados.includes(repo.name))
+      .slice(0, 8);
+
+    activeRepos.forEach(repo => {
+      const card = document.createElement('a');
+      card.className = 'project-card';
+      card.href = repo.html_url;
+      card.target = '_blank';
+
+      let formattedName = repo.name.replace(/-/g, ' ');
+      formattedName = formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
+
+      card.innerHTML = `
+        <div class="project-img">
+          <div class="aesthetic-bg">
+            <div class="aesthetic-glow"></div>
+            <div class="aesthetic-grid"></div>
+            <div class="aesthetic-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div>
+            <div class="project-name">${formattedName}</div>
+            <div class="project-cat">${repo.description ? repo.description : 'Sem descrição'}</div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle && langToggle.classList.contains('active')) {
+      translatePage(true);
+    }
+
+  } catch (error) {
+    console.error('Erro ao buscar repositórios do GitHub', error);
+    container.innerHTML = '<p style="color: red; text-align: center; grid-column: 1 / -1;">Erro ao carregar projetos do GitHub.</p>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadGitHubProjects();
+
+  const viewMoreBtn = document.getElementById('view-more-projects-btn');
+  const projectsWrapper = document.getElementById('projects-wrapper');
+
+  if (viewMoreBtn && projectsWrapper) {
+    viewMoreBtn.addEventListener('click', () => {
+      // Pega a altura real do conteúdo
+      const scrollHeight = projectsWrapper.scrollHeight;
+      
+      // Aplica a transição diretamente via JavaScript (bem lenta e suave)
+      projectsWrapper.style.transition = 'max-height 1.5s ease-in-out';
+      projectsWrapper.style.maxHeight = scrollHeight + 'px';
+      
+      projectsWrapper.classList.remove('collapsed');
+
+      const overlay = document.getElementById('projects-overlay');
+      if (overlay) {
+        // Faz o overlay do botão sumir lentamente também
+        overlay.style.transition = 'opacity 1s ease-in-out';
+        overlay.style.opacity = '0';
+        
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          // Limpa a restrição de altura depois da animação para manter o layout flexível
+          projectsWrapper.style.maxHeight = 'none';
+        }, 1500); 
+      }
+    });
+  }
+});
