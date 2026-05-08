@@ -36,9 +36,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 0 18px;
-  border-bottom: 1px solid var(--border);
+  padding: 22px max(24px, calc((100% - 732px) / 2)) 18px;
   margin-bottom: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.topbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(100% + 64px);
+  background: rgba(245, 243, 239, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black calc(100% - 64px), transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black calc(100% - 64px), transparent 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .topbar-logo {
@@ -919,7 +938,6 @@ body.space-mode .page {
 }
 
 /* Blur effect on specific elements */
-body.space-mode .topbar,
 body.space-mode .card,
 body.space-mode .lang-toggle,
 body.space-mode .space-toggle,
@@ -929,6 +947,10 @@ body.space-mode .unavailable-tag,
 body.space-mode .social-links a {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+body.space-mode .topbar::before {
+  background: rgba(5, 5, 5, 0.5);
 }
 
 body.space-mode .btn-dark {
